@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
                 },
         features = "src/test/resources/features",
         glue = "com/zerobank/step_definitions",
-        dryRun = true,
-        tags = "@wip"
+        dryRun = false,
+        tags = "@transactions"
 )
 public class CukesRunner {
 }
