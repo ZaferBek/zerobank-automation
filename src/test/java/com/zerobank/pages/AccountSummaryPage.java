@@ -30,4 +30,6 @@ public class AccountSummaryPage extends BasePage{
         //BrowserUtils.waitForStaleElement(pageSubTitle)
         return pageSubTitle.getText();
     }
+    @FindBy(xpath = "//a[text()='Pay Bills']")
+    public WebElement payBillsModule;
 }
