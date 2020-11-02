@@ -3,32 +3,10 @@
     "line": 2,
     "elements": [
       {
-        "line": 3,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 1998500,
-              "status": "skipped"
-            },
-            "line": 4,
-            "name": "the user is logged in",
-            "match": {
-              "location": "com.zerobank.step_definitions.AccountActivityNavigationStepDefs.the_user_is_logged_in()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-10-31T19:18:10.297Z",
+        "start_timestamp": "2020-11-02T15:51:43.016Z",
         "before": [
           {
             "result": {
-              "duration": 1999200,
               "status": "skipped"
             },
             "match": {
@@ -36,10 +14,10 @@
             }
           }
         ],
-        "line": 6,
-        "name": "Add a new Payee",
+        "line": 4,
+        "name": "Account Summary Page title confirmation",
         "description": "",
-        "id": "add-new-payee-under-pay-bills;add-a-new-payee",
+        "id": "account-summary-page;account-summary-page-title-confirmation",
         "after": [
           {
             "result": {
@@ -55,52 +33,71 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
-            "line": 7,
-            "name": "the user navigates to Pay Bills module",
-            "match": {},
+            "line": 5,
+            "name": "the user is logged in",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountActivityNavigationStepDefs.the_user_is_logged_in()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
-            "line": 8,
-            "name": "the user selects Add New Payee tab",
-            "match": {},
-            "keyword": "And "
+            "line": 6,
+            "name": "the user is on Account Summary page",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.the_user_is_on_Account_Summary_page()"
+            },
+            "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
-            "line": 9,
-            "name": "the user creates new payee using following information",
-            "match": {},
+            "line": 7,
+            "name": "page should have the title \"Zero - Account Summary\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Zero - Account Summary\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.page_should_have_the_title(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "Account Summary page should have the following account types",
+            "match": {
+              "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.account_Summary_page_should_have_the_following_account_types(java.util.List\u003cjava.lang.String\u003e)"
+            },
             "rows": [
               {
                 "cells": [
-                  "Payee Name",
-                  "The Law Offices of Hyde, Price\u0026Scharks"
+                  "Cash Accounts"
                 ]
               },
               {
                 "cells": [
-                  "Payee Address",
-                  "100 Same st, Anytown, USA, 10001"
+                  "Investment Accounts"
                 ]
               },
               {
                 "cells": [
-                  "Account",
-                  "Checking"
+                  "Credit Accounts"
                 ]
               },
               {
                 "cells": [
-                  "Payee details",
-                  "XYZ account"
+                  "Loan Accounts"
                 ]
               }
             ],
@@ -110,10 +107,27 @@
             "result": {
               "status": "undefined"
             },
-            "line": 14,
-            "name": "message \"The new payee The Law Offices of Hyde, Price\u0026Scharks was successfully created.\" should be displayed",
+            "line": 13,
+            "name": "Credit Accounts table must have columns",
             "match": {},
-            "keyword": "Then "
+            "rows": [
+              {
+                "cells": [
+                  "Account"
+                ]
+              },
+              {
+                "cells": [
+                  "Credit Card"
+                ]
+              },
+              {
+                "cells": [
+                  "Balance"
+                ]
+              }
+            ],
+            "keyword": "And "
           }
         ],
         "tags": [
@@ -123,11 +137,11 @@
         ]
       }
     ],
-    "name": "Add new Payee under Pay Bills",
+    "name": "Account Summary Page",
     "description": "",
-    "id": "add-new-payee-under-pay-bills",
+    "id": "account-summary-page",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/AddNewPayee.feature",
+    "uri": "file:src/test/resources/features/AccountSummary.feature",
     "tags": []
   }
 ]

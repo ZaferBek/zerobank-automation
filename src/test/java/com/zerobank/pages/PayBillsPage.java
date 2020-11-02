@@ -3,6 +3,8 @@ package com.zerobank.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class PayBillsPage extends BasePage{
 
     @FindBy(xpath = "//a[text()='Pay Saved Payee']")
@@ -31,4 +33,19 @@ public class PayBillsPage extends BasePage{
 
     @FindBy(xpath = "//div[@id='alert_content']")
     public WebElement alertContent;
+
+    @FindBy(xpath = "//select[@id='pc_currency']")
+    public WebElement currencyDropdown;
+
+    @FindBy(xpath = "//select[@id='pc_currency']/option")
+    public List<WebElement> currencyOptions;
+
+    @FindBy(xpath = "//input[@id='pc_amount']")
+    public WebElement amountInput;
+
+    @FindBy(xpath = "//label[@class='radio inline']")
+    public List<WebElement> selectCurrencyRadioButton;
+
+    @FindBy (xpath = "//input[@id='pc_calculate_costs']")
+    public WebElement calculateCostsButton;
 }

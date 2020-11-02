@@ -2,7 +2,7 @@
   Feature: Add new Payee under Pay Bills
 Background:
   Given the user is logged in
-@wip
+
     Scenario: Add a new Payee
       Given the user navigates to Pay Bills module
       And the user selects Add New Payee tab

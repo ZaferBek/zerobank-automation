@@ -32,7 +32,7 @@ public class LoginStepDefs {
 
     @Then("Account Summary page should be displayed")
     public void account_Summary_page_should_be_displayed() {
-        Driver.get().getTitle().contains("Zero - Account Summary");
+        Assert.assertTrue(Driver.get().getTitle().contains("Zero - Account Summary"));
     }
 
     @When("the user enter wrong username")
