@@ -48,4 +48,32 @@ public class PayBillsPage extends BasePage{
 
     @FindBy (xpath = "//input[@id='pc_calculate_costs']")
     public WebElement calculateCostsButton;
+
+    @FindBy(xpath = "//select[@id='sp_payee']")
+    public WebElement payeeSelect;
+
+    @FindBy(xpath = "//select[@id='sp_payee']/option")
+    public List<WebElement> payeeOptions;
+
+    @FindBy(xpath = "//select[@id='sp_account']")
+    public WebElement accountSelect;
+
+    @FindBy(xpath = "//select[@id='sp_account']/option")
+    public List<WebElement> accountOptions;
+
+    @FindBy(xpath = "//input[@id='sp_amount']")
+    public WebElement sp_amountInput;
+
+    @FindBy(xpath = "//input[@id='sp_date']")
+    public WebElement dateInput;
+
+    @FindBy(xpath = "//input[@id='sp_description']")
+    public WebElement descriptionInput;
+
+    @FindBy(id = "pay_saved_payees")
+    public WebElement payButton;
+
+    @FindBy(xpath = "//span[text()='The payment was successfully submitted.']")
+    public WebElement successMessage;
+
 }

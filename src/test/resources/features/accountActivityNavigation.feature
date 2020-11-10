@@ -27,3 +27,19 @@ Background:
     When the user clicks on Loan link on the Account Summary page
     Then the Account Activity page should be displayed
     And Account dropdown should have Loan selected
+
+    Scenario: Account Activity - Show Transactions
+      And the user navigates to Account Activity module
+      When page should have the title "Zero - Account Activity"
+      Then Account drop down should have Savings selected
+      And Account dropdown should have the following options
+      |Savings      |
+      |Checking     |
+      |Loan         |
+      |Credit Card  |
+      |Brokerage    |
+      And Transactions table should have column names
+      |Date         |
+      |Description  |
+      |Deposit      |
+      |Withdrawal   |

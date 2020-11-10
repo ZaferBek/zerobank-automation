@@ -1,6 +1,6 @@
 
   Feature: Account Summary Page
-@wip
+
 Scenario: Account Summary Page title confirmation
   Given the user is logged in
   When the user is on Account Summary page

@@ -1,18 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/AccountSummary.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/PayBills.feature");
 formatter.feature({
-  "name": "Account Summary Page",
+  "name": "Pay Bills page activities",
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "name": "Account Summary Page title confirmation",
+formatter.background({
+  "name": "",
   "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@wip"
-    }
-  ]
+  "keyword": "Background"
 });
 formatter.before({
   "status": "skipped"
@@ -27,19 +22,29 @@ formatter.match({
 formatter.result({
   "status": "skipped"
 });
+formatter.scenario({
+  "name": "Pay Saved Payee",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@wip"
+    }
+  ]
+});
 formatter.step({
-  "name": "the user is on Account Summary page",
-  "keyword": "When "
+  "name": "the user navigates to Pay Bills module",
+  "keyword": "And "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.the_user_is_on_Account_Summary_page()"
+  "location": "com.zerobank.step_definitions.PayBillsStepDefs.the_user_navigates_to_Pay_Bills_module()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "page should have the title \"Zero - Account Summary\"",
-  "keyword": "Then "
+  "name": "page should have the title \"Zero - Pay Bills\"",
+  "keyword": "And "
 });
 formatter.match({
   "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.page_should_have_the_title(java.lang.String)"
@@ -48,33 +53,62 @@ formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Account Summary page should have the following account types",
-  "rows": [
-    {},
-    {},
-    {},
-    {}
-  ],
-  "keyword": "And "
+  "name": "user completes a successful Pay operation",
+  "keyword": "When "
 });
 formatter.match({
-  "location": "com.zerobank.step_definitions.AccountSummaryStepDefs.account_Summary_page_should_have_the_following_account_types(java.util.List\u003cjava.lang.String\u003e)"
+  "location": "com.zerobank.step_definitions.PayBillsStepDefs.user_completes_a_successful_Pay_operation()"
 });
 formatter.result({
   "status": "skipped"
 });
 formatter.step({
-  "name": "Credit Accounts table must have columns",
-  "rows": [
-    {},
-    {},
-    {}
-  ],
-  "keyword": "And "
+  "name": "\"The payment was successfully submitted.\" should be displayed",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.PayBillsStepDefs.should_be_displayed(java.lang.String)"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "the user tries to make a payment without entering the amount",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.PayBillsStepDefs.the_user_tries_to_make_a_payment_without_entering_the_amount()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "\"Please fill out this field.\" popup message should be displayed",
+  "keyword": "Then "
 });
 formatter.match({});
 formatter.result({
   "status": "undefined"
+});
+formatter.step({
+  "name": "the user tries to make a payment without entering the date",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.PayBillsStepDefs.the_user_tries_to_make_a_payment_without_entering_the_date()"
+});
+formatter.result({
+  "status": "skipped"
+});
+formatter.step({
+  "name": "\"Please fill out this field.\" should be displayed",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.zerobank.step_definitions.PayBillsStepDefs.should_be_displayed(java.lang.String)"
+});
+formatter.result({
+  "status": "skipped"
 });
 formatter.after({
   "status": "skipped"

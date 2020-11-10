@@ -14,6 +14,8 @@ import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class AccountActivityNavigationStepDefs {
 
     @Given("the user is logged in")
@@ -22,7 +24,7 @@ public class AccountActivityNavigationStepDefs {
         LoginPage loginPage = new LoginPage();
         loginPage.signinButton.click();
         loginPage.login(ConfigurationReader.get("username"), ConfigurationReader.get("password"));
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitForPageToLoad(2);
     }
 
     @When("the user clicks on Savings link on the Account Summary page")
@@ -88,6 +90,25 @@ public class AccountActivityNavigationStepDefs {
         Select accountDropdown = new Select(new AccountActivityPage().accountDropdown);
         String selected = accountDropdown.getFirstSelectedOption().getText();
         Assert.assertEquals("Loan", selected);
+    }
+
+    @Given("the user navigates to Account Activity module")
+    public void the_user_navigates_to_Account_Activity_module() {
+        new AccountSummaryPage().accountActivityTab.click();
+        BrowserUtils.waitForPageToLoad(1);
+    }
+
+    @Then("Account dropdown should have the following options")
+    public void account_dropdown_should_have_the_following_options(List<String> accountOptions) {
+        AccountActivityPage accountActivityPage = new AccountActivityPage();
+        List<String> expectedOptions = BrowserUtils.getElementsText(accountActivityPage.accountOptions);
+        Assert.assertTrue(expectedOptions.containsAll(accountOptions));
+    }
+
+    @Then("Transactions table should have column names")
+    public void transactions_table_should_have_column_names(List<String> ActualColumnNames) {
+        List<String> expectedOptions = BrowserUtils.getElementsText(new AccountActivityPage().transactionTableColumns);
+        Assert.assertTrue(expectedOptions.containsAll(ActualColumnNames));
     }
 
 
